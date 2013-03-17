@@ -38,6 +38,10 @@ class Laurent_Twittercards_Block_Meta extends Mage_Core_Block_Template {
         return $title;
     }
 
+    /**
+     * @param Mage_Catalog_Model_Product $product
+     * @return string
+     */
     public function getProductTwitterTitle(Mage_Catalog_Model_Product $product)
     {
         return $this->escapeHtml($product->getName());
@@ -70,6 +74,37 @@ class Laurent_Twittercards_Block_Meta extends Mage_Core_Block_Template {
         $description = $coreHelper->stripTags($rawDescription);
         $description = $stringHelper->truncate($description, 200);
         return $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageUrl()
+    {
+        $imageUrl = '';
+        $currentProduct = Mage::registry('current_product');
+        if($currentProduct instanceof Mage_Catalog_Model_Product) {
+            /** @var $imageHelper Mage_Catalog_Helper_Image */
+            $imageHelper = $this->helper('catalog/image');
+            $imageUrl = $imageHelper->init($currentProduct, 'image')->resize(120)->__toString();
+        }
+        return $imageUrl;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSiteTwitterName()
+    {
+        return Mage::getStoreConfig('twittercards/settings/site_account');
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreatorTwitterName()
+    {
+        return Mage::getStoreConfig('twittercards/settings/creator_account');
     }
 
 }

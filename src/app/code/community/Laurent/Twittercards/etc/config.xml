@@ -24,6 +24,17 @@
             </twittercards>
         </blocks>
     </global>
+    <adminhtml>
+        <translate>
+            <modules>
+                <laurent_twittercards>
+                    <files>
+                        <default>Laurent_Twittercards.csv</default>
+                    </files>
+                </laurent_twittercards>
+            </modules>
+        </translate>
+    </adminhtml>
     <frontend>
         <layout>
             <updates>
@@ -36,7 +47,7 @@
     <phpunit>
         <suite>
             <modules>
-                <Laurent_Twittercards />
+                <Laurent_Twittercards/>
             </modules>
         </suite>
     </phpunit>

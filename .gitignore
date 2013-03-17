@@ -127,7 +127,6 @@ src/app/etc/modules/Mage_XmlConnect.xml
 src/app/etc/modules/Mgt_Base.xml
 src/app/etc/modules/Mgt_DeveloperToolbar.xml
 src/app/etc/modules/Phoenix_Moneybookers.xml
-src/app/locale/
 src/cron.php
 src/cron.sh
 src/downloader/
@@ -149,3 +148,7 @@ src/pkginfo/
 src/shell/
 src/skin/
 src/var/
+src/app/locale/en_US/Mage_*
+src/app/locale/en_US/Phoenix_Moneybookers.csv
+src/app/locale/en_US/template/
+

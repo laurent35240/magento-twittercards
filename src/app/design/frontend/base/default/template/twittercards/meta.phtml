@@ -18,3 +18,10 @@
 <meta name="twitter:url" content="<?php echo $this->getCanonicalUrl(); ?>" />
 <meta name="twitter:title" content="<?php echo $this->getTitle(); ?>"/>
 <meta name="twitter:description" content="<?php echo $this->getDescription(); ?>" />
+<meta name="twitter:image" content="<?php echo $this->getImageUrl(); ?>" />
+<?php if($this->getSiteTwitterName() != ''): ?>
+<meta name="twitter:site" content="<?php echo $this->getSiteTwitterName(); ?>" />
+<?php endif; ?>
+<?php if($this->getCreatorTwitterName() != ''): ?>
+<meta name="twitter:creator" content="<?php echo $this->getCreatorTwitterName(); ?>" />
+<?php endif; ?>
