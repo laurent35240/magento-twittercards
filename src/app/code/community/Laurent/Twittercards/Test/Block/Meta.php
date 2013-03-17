@@ -67,4 +67,15 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
         $metaBlock = new Laurent_Twittercards_Block_Meta();
         $this->assertEquals('Product &quot;name&quot;', $metaBlock->getProductTwitterTitle($product));
     }
+
+    /**
+     * @loadFixture
+     */
+    public function testProductTwitterTitleMetaUsed()
+    {
+        /** @var $product Mage_Catalog_Model_Product */
+        $product = Mage::getModel('catalog/product')->load(1);
+        $metaBlock = new Laurent_Twittercards_Block_Meta();
+        $this->assertEquals('Product meta title', $metaBlock->getProductTwitterTitle($product));
+    }
 }

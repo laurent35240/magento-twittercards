@@ -44,7 +44,13 @@ class Laurent_Twittercards_Block_Meta extends Mage_Core_Block_Template {
      */
     public function getProductTwitterTitle(Mage_Catalog_Model_Product $product)
     {
-        return $this->escapeHtml($product->getName());
+        if($product->getData('meta_title') != '') {
+            $rawTwitterTitle = $product->getData('meta_title');
+        }
+        else {
+            $rawTwitterTitle = $product->getName();
+        }
+        return $this->escapeHtml($rawTwitterTitle);
     }
 
     /**
