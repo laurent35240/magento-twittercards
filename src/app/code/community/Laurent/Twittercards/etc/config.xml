@@ -17,4 +17,27 @@
             <version>0.1.0</version>
         </Laurent_Twittercards>
     </modules>
+    <global>
+        <blocks>
+            <twittercards>
+                <class>Laurent_Twittercards_Block</class>
+            </twittercards>
+        </blocks>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <laurent_twittercards>
+                    <file>twittercards.xml</file>
+                </laurent_twittercards>
+            </updates>
+        </layout>
+    </frontend>
+    <phpunit>
+        <suite>
+            <modules>
+                <Laurent_Twittercards />
+            </modules>
+        </suite>
+    </phpunit>
 </config>
