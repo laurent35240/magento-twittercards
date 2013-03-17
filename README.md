@@ -1,0 +1,1 @@
+Magento Twitter Cards
