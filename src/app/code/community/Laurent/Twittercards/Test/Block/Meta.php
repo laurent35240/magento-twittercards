@@ -26,6 +26,17 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
     /**
      * @loadFixture
      */
+    public function testProductTwitterDescriptionNewAttributeUsed()
+    {
+        /** @var $product Mage_Catalog_Model_Product */
+        $product = Mage::getModel('catalog/product')->load(1);
+        $metaBlock = new Laurent_Twittercards_Block_Meta();
+        $this->assertEquals('Twitter description', $metaBlock->getProductTwitterDescription($product));
+    }
+
+    /**
+     * @loadFixture
+     */
     public function testProductTwitterDescriptionWithHtml()
     {
         /** @var $product Mage_Catalog_Model_Product */
@@ -77,5 +88,38 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
         $product = Mage::getModel('catalog/product')->load(1);
         $metaBlock = new Laurent_Twittercards_Block_Meta();
         $this->assertEquals('Product meta title', $metaBlock->getProductTwitterTitle($product));
+    }
+
+    /**
+     * @loadFixture
+     */
+    public function testProductTwitterTitleNewAttributeUsed()
+    {
+        /** @var $product Mage_Catalog_Model_Product */
+        $product = Mage::getModel('catalog/product')->load(1);
+        $metaBlock = new Laurent_Twittercards_Block_Meta();
+        $this->assertEquals('Product twitter title', $metaBlock->getProductTwitterTitle($product));
+    }
+
+    /**
+     * @loadFixture
+     */
+    public function testProductImageAttributeCodeDefault()
+    {
+        /** @var $product Mage_Catalog_Model_Product */
+        $product = Mage::getModel('catalog/product')->load(1);
+        $metaBlock = new Laurent_Twittercards_Block_Meta();
+        $this->assertEquals('image', $metaBlock->getProductImageAttributeCodeToUse($product));
+    }
+
+    /**
+     * @loadFixture
+     */
+    public function testProductImageAttributeCodeTwitter()
+    {
+        /** @var $product Mage_Catalog_Model_Product */
+        $product = Mage::getModel('catalog/product')->load(1);
+        $metaBlock = new Laurent_Twittercards_Block_Meta();
+        $this->assertEquals('twitter_image', $metaBlock->getProductImageAttributeCodeToUse($product));
     }
 }

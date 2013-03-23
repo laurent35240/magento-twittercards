@@ -14,7 +14,7 @@
 <config>
     <modules>
         <Laurent_Twittercards>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </Laurent_Twittercards>
     </modules>
     <global>
@@ -23,6 +23,22 @@
                 <class>Laurent_Twittercards_Block</class>
             </twittercards>
         </blocks>
+        <models>
+            <twittercards>
+                <class>Laurent_Twittercards_Model</class>
+            </twittercards>
+        </models>
+        <resources>
+            <twittercards_setup>
+                <setup>
+                    <module>Laurent_Twittercards</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </twittercards_setup>
+        </resources>
     </global>
     <adminhtml>
         <translate>

@@ -18,4 +18,9 @@ class Laurent_Twittercards_Test_Config_Configxml extends EcomDev_PHPUnit_Test_Ca
         $this->assertBlockAlias('twittercards/meta', 'Laurent_Twittercards_Block_Meta');
     }
 
+    public function testBackendImageModelAlias()
+    {
+        $this->assertModelAlias('twittercards/product_attribute_backend_image', 'Laurent_Twittercards_Model_Product_Attribute_Backend_Image');
+    }
+
 }

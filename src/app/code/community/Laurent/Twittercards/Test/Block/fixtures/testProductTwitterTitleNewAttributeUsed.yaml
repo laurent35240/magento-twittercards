@@ -1,0 +1,6 @@
+eav:
+  catalog_product:
+    - entity_id: 1
+      name: Product name
+      meta_title: Product meta title
+      twitter_title: Product twitter title
