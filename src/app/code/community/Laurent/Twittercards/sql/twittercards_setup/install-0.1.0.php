@@ -41,7 +41,8 @@ $this->addAttribute($productEntityType->getId(), 'twitter_title', array(
     'visible_on_front' => true,
     'unique' => false,
     'is_configurable' => false,
-    'used_for_promo_rules' => false
+    'used_for_promo_rules' => false,
+    'note'  => 'If not set, product meta title or name will be used'
 ));
 
 $this->endSetup();

@@ -44,15 +44,8 @@ class Laurent_Twittercards_Block_Meta extends Mage_Core_Block_Template {
      */
     public function getProductTwitterTitle(Mage_Catalog_Model_Product $product)
     {
-        if($product->getData('twitter_title') != '') {
-            $rawTwitterTitle = $product->getData('twitter_title');
-        }
-        elseif($product->getData('meta_title') != '') {
-            $rawTwitterTitle = $product->getData('meta_title');
-        }
-        else {
-            $rawTwitterTitle = $product->getName();
-        }
+        $attributeCodes = array('twitter_title', 'meta_title', 'name');
+        $rawTwitterTitle = $this->getProductDataWithFallback($product, $attributeCodes);
         return $this->escapeHtml($rawTwitterTitle);
     }
 
@@ -80,16 +73,30 @@ class Laurent_Twittercards_Block_Meta extends Mage_Core_Block_Template {
         /** @var $stringHelper Mage_Core_Helper_String */
         $stringHelper = $this->helper('core/string');
 
-        if($product->getData('twitter_description') != '') {
-            $rawDescription = $product->getData('twitter_description');
-        }
-        else {
-            $rawDescription = $product->getData('short_description');
-        }
+        $attributeCodes = array('twitter_description', 'meta_description', 'short_description');
+        $rawDescription = $this->getProductDataWithFallback($product, $attributeCodes);
 
         $description = $coreHelper->stripTags($rawDescription);
         $description = $stringHelper->truncate($description, 200);
         return $description;
+    }
+
+    /**
+     * Get data from product from first attribute that have a value
+     * @param Mage_Catalog_Model_Product $product
+     * @param $attributeCodes
+     * @return mixed
+     */
+    protected function getProductDataWithFallback(Mage_Catalog_Model_Product $product, $attributeCodes)
+    {
+        $data = null;
+        reset($attributeCodes);
+        $attributeCode = current($attributeCodes);
+        while (!$data && $attributeCode !== false) {
+            $data = $product->getData($attributeCode);
+            $attributeCode = next($attributeCodes);
+        };
+        return $data;
     }
 
     /**

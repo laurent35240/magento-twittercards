@@ -27,7 +27,8 @@ $this->addAttribute(Mage_Catalog_Model_Product::ENTITY, 'twitter_description', a
     'visible_on_front' => true,
     'unique' => false,
     'is_configurable' => false,
-    'used_for_promo_rules' => false
+    'used_for_promo_rules' => false,
+    'note'  => 'If not set, product meta description or short description will be used'
 ));
 
 //Creation of twitter image attribute
@@ -45,7 +46,8 @@ $this->addAttribute(Mage_Catalog_Model_Product::ENTITY, 'twitter_image', array(
     'visible_on_front' => true,
     'unique' => false,
     'is_configurable' => false,
-    'used_for_promo_rules' => false
+    'used_for_promo_rules' => false,
+    'note'  => 'If not set, product default image will be used'
 ));
 
 $this->endSetup();
