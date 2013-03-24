@@ -10,7 +10,7 @@
  * @copyright  Copyright (c) 2012 Jean Jean Inc. (http://laurent-clouet.fr/)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0) 
  */ 
-class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
+class Laurent_Twittercards_Test_Block_Meta_Product extends EcomDev_PHPUnit_Test_Case{
 
     /**
      * @loadFixture
@@ -19,7 +19,7 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
     {
         /** @var $product Mage_Catalog_Model_Product */
         $product = Mage::getModel('catalog/product')->load(1);
-        $metaBlock = new Laurent_Twittercards_Block_Meta();
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Product();
         $this->assertEquals('A short description', $metaBlock->getProductTwitterDescription($product));
     }
 
@@ -30,7 +30,7 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
     {
         /** @var $product Mage_Catalog_Model_Product */
         $product = Mage::getModel('catalog/product')->load(1);
-        $metaBlock = new Laurent_Twittercards_Block_Meta();
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Product();
         $this->assertEquals('Meta description', $metaBlock->getProductTwitterDescription($product));
     }
 
@@ -41,7 +41,7 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
     {
         /** @var $product Mage_Catalog_Model_Product */
         $product = Mage::getModel('catalog/product')->load(1);
-        $metaBlock = new Laurent_Twittercards_Block_Meta();
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Product();
         $this->assertEquals('Twitter description', $metaBlock->getProductTwitterDescription($product));
     }
 
@@ -52,7 +52,7 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
     {
         /** @var $product Mage_Catalog_Model_Product */
         $product = Mage::getModel('catalog/product')->load(1);
-        $metaBlock = new Laurent_Twittercards_Block_Meta();
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Product();
         $this->assertEquals('A short description', $metaBlock->getProductTwitterDescription($product));
     }
 
@@ -63,7 +63,7 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
     {
         /** @var $product Mage_Catalog_Model_Product */
         $product = Mage::getModel('catalog/product')->load(1);
-        $metaBlock = new Laurent_Twittercards_Block_Meta();
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Product();
         $twitterDescription = $metaBlock->getProductTwitterDescription($product);
         $this->assertLessThanOrEqual(200, strlen($twitterDescription));
     }
@@ -75,8 +75,8 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
     {
         /** @var $product Mage_Catalog_Model_Product */
         $product = Mage::getModel('catalog/product')->load(1);
-        $metaBlock = new Laurent_Twittercards_Block_Meta();
-        $this->assertEquals('Product name', $metaBlock->getProductTwitterTitle($product));
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Product();
+        $this->assertEquals('Product name', $metaBlock->getCatalogObjectTwitterTitle($product));
     }
 
     /**
@@ -86,8 +86,8 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
     {
         /** @var $product Mage_Catalog_Model_Product */
         $product = Mage::getModel('catalog/product')->load(1);
-        $metaBlock = new Laurent_Twittercards_Block_Meta();
-        $this->assertEquals('Product &quot;name&quot;', $metaBlock->getProductTwitterTitle($product));
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Product();
+        $this->assertEquals('Product &quot;name&quot;', $metaBlock->getCatalogObjectTwitterTitle($product));
     }
 
     /**
@@ -97,8 +97,8 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
     {
         /** @var $product Mage_Catalog_Model_Product */
         $product = Mage::getModel('catalog/product')->load(1);
-        $metaBlock = new Laurent_Twittercards_Block_Meta();
-        $this->assertEquals('Product meta title', $metaBlock->getProductTwitterTitle($product));
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Product();
+        $this->assertEquals('Product meta title', $metaBlock->getCatalogObjectTwitterTitle($product));
     }
 
     /**
@@ -108,8 +108,8 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
     {
         /** @var $product Mage_Catalog_Model_Product */
         $product = Mage::getModel('catalog/product')->load(1);
-        $metaBlock = new Laurent_Twittercards_Block_Meta();
-        $this->assertEquals('Product twitter title', $metaBlock->getProductTwitterTitle($product));
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Product();
+        $this->assertEquals('Product twitter title', $metaBlock->getCatalogObjectTwitterTitle($product));
     }
 
     /**
@@ -119,7 +119,7 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
     {
         /** @var $product Mage_Catalog_Model_Product */
         $product = Mage::getModel('catalog/product')->load(1);
-        $metaBlock = new Laurent_Twittercards_Block_Meta();
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Product();
         $this->assertEquals('image', $metaBlock->getProductImageAttributeCodeToUse($product));
     }
 
@@ -130,7 +130,7 @@ class Laurent_Twittercards_Test_Block_Meta extends EcomDev_PHPUnit_Test_Case{
     {
         /** @var $product Mage_Catalog_Model_Product */
         $product = Mage::getModel('catalog/product')->load(1);
-        $metaBlock = new Laurent_Twittercards_Block_Meta();
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Product();
         $this->assertEquals('twitter_image', $metaBlock->getProductImageAttributeCodeToUse($product));
     }
 }

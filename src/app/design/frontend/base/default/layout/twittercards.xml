@@ -14,7 +14,12 @@
 <layout version="0.1.0">
     <catalog_product_view>
         <reference name="head">
-            <block type="twittercards/meta" name="twittercards_meta" template="twittercards/meta.phtml" />
+            <block type="twittercards/meta_product" name="twittercards_meta" template="twittercards/meta.phtml" />
         </reference>
     </catalog_product_view>
+    <catalog_category_view>
+        <reference name="head">
+            <block type="twittercards/meta_category" name="twittercards_meta" template="twittercards/meta.phtml" />
+        </reference>
+    </catalog_category_view>
 </layout>
