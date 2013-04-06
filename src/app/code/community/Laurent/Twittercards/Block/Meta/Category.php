@@ -43,8 +43,21 @@ class Laurent_Twittercards_Block_Meta_Category extends Laurent_Twittercards_Bloc
      */
     public function getDescription()
     {
-        // TODO: Implement getDescription() method.
+        return $this->getMethodValueIfCategory('getCategoryTwitterDescription');
     }
+
+    /**
+     * @param Mage_Catalog_Model_Category $category
+     * @return string
+     */
+    public function getCategoryTwitterDescription(Mage_Catalog_Model_Category $category)
+    {
+        $attributeCodes = array('description');
+        $rawDescription = $this->getEntityDataWithFallback($category, $attributeCodes);
+
+        return $this->cleanDescriptionForTwitter($rawDescription);
+    }
+
 
     /**
      * @return string

@@ -52,17 +52,10 @@ class Laurent_Twittercards_Block_Meta_Product extends Laurent_Twittercards_Block
      */
     public function getProductTwitterDescription(Mage_Catalog_Model_Product $product)
     {
-        /** @var $coreHelper Mage_Core_Helper_Data */
-        $coreHelper = $this->helper('core');
-        /** @var $stringHelper Mage_Core_Helper_String */
-        $stringHelper = $this->helper('core/string');
-
         $attributeCodes = array('twitter_description', 'meta_description', 'short_description');
         $rawDescription = $this->getEntityDataWithFallback($product, $attributeCodes);
 
-        $description = $coreHelper->stripTags($rawDescription);
-        $description = $stringHelper->truncate($description, 200);
-        return $description;
+        return $this->cleanDescriptionForTwitter($rawDescription);
     }
 
     /**

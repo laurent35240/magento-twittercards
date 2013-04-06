@@ -80,6 +80,23 @@ abstract class Laurent_Twittercards_Block_Meta_Abstract extends Mage_Core_Block_
         return $data;
     }
 
+    /**
+     * Remove html tags and truncate description to 200 characters
+     * @param string $rawDescription
+     * @return string
+     */
+    public function cleanDescriptionForTwitter($rawDescription)
+    {
+        /** @var $coreHelper Mage_Core_Helper_Data */
+        $coreHelper = $this->helper('core');
+        /** @var $stringHelper Mage_Core_Helper_String */
+        $stringHelper = $this->helper('core/string');
+
+        $description = $coreHelper->stripTags($rawDescription);
+        $description = $stringHelper->truncate($description, 200);
+        return $description;
+    }
+
 
     protected function getMethodValueIfCorrectRegistry($methodName, $registryKey, $expectedClassName)
     {
