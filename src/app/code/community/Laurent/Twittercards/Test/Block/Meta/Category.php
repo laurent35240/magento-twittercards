@@ -60,6 +60,28 @@ class Laurent_Twittercards_Test_Block_Meta_Category extends EcomDev_PHPUnit_Test
     /**
      * @loadFixture
      */
+    public function testCategoryTwitterDescriptionMetaUsed()
+    {
+        $category = Mage::getModel('catalog/category');
+        $category->load(1);
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Category();
+        $this->assertEquals('Category meta description', $metaBlock->getCategoryTwitterDescription($category));
+    }
+
+    /**
+     * @loadFixture
+     */
+    public function testCategoryTwitterDescriptionTwitterUsed()
+    {
+        $category = Mage::getModel('catalog/category');
+        $category->load(1);
+        $metaBlock = new Laurent_Twittercards_Block_Meta_Category();
+        $this->assertEquals('Category twitter description', $metaBlock->getCategoryTwitterDescription($category));
+    }
+
+    /**
+     * @loadFixture
+     */
     public function testCategoryTwitterDescriptionWithHtml()
     {
         $category = Mage::getModel('catalog/category');

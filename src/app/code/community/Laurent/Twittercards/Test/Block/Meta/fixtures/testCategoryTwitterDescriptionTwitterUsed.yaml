@@ -1,0 +1,6 @@
+eav:
+  catalog_category:
+    - entity_id: 1
+      description: Category description
+      meta_description: Category meta description
+      twitter_description: Category twitter description
