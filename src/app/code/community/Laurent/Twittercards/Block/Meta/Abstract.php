@@ -102,7 +102,7 @@ abstract class Laurent_Twittercards_Block_Meta_Abstract extends Mage_Core_Block_
     {
         $value = null;
         $registryObject = Mage::registry($registryKey);
-        if($registryObject instanceof $expectedClassName) {
+        if ($registryObject instanceof $expectedClassName) {
             $value = call_user_func(array($this, $methodName), $registryObject);
         }
         return $value;

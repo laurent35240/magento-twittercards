@@ -14,40 +14,48 @@
 $this->startSetup();
 
 //Creation of twitter description attribute
-$this->addAttribute(Mage_Catalog_Model_Product::ENTITY, 'twitter_description', array(
-    'group' => 'Twitter Cards',
-    'sort_order' => 20,
-    'type' => 'text',
-    'label' => 'Twitter Description',
-    'input' => 'textarea',
-    'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-    'visible' => true,
-    'required' => false,
-    'user_defined' => true,
-    'visible_on_front' => true,
-    'unique' => false,
-    'is_configurable' => false,
-    'used_for_promo_rules' => false,
-    'note'  => 'If not set, product meta description or short description will be used'
-));
+$this->addAttribute(
+    Mage_Catalog_Model_Product::ENTITY,
+    'twitter_description',
+    array(
+        'group' => 'Twitter Cards',
+        'sort_order' => 20,
+        'type' => 'text',
+        'label' => 'Twitter Description',
+        'input' => 'textarea',
+        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'visible' => true,
+        'required' => false,
+        'user_defined' => true,
+        'visible_on_front' => true,
+        'unique' => false,
+        'is_configurable' => false,
+        'used_for_promo_rules' => false,
+        'note'  => 'If not set, product meta description or short description will be used'
+    )
+);
 
 //Creation of twitter image attribute
-$this->addAttribute(Mage_Catalog_Model_Product::ENTITY, 'twitter_image', array(
-    'group' => 'Twitter Cards',
-    'sort_order' => 20,
-    'type' => 'varchar',
-    'label' => 'Twitter Image',
-    'input' => 'image',
-    'backend' => 'twittercards/product_attribute_backend_image',
-    'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-    'visible' => true,
-    'required' => false,
-    'user_defined' => true,
-    'visible_on_front' => true,
-    'unique' => false,
-    'is_configurable' => false,
-    'used_for_promo_rules' => false,
-    'note'  => 'If not set, product default image will be used'
-));
+$this->addAttribute(
+    Mage_Catalog_Model_Product::ENTITY,
+    'twitter_image',
+    array(
+        'group' => 'Twitter Cards',
+        'sort_order' => 20,
+        'type' => 'varchar',
+        'label' => 'Twitter Image',
+        'input' => 'image',
+        'backend' => 'twittercards/product_attribute_backend_image',
+        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'visible' => true,
+        'required' => false,
+        'user_defined' => true,
+        'visible_on_front' => true,
+        'unique' => false,
+        'is_configurable' => false,
+        'used_for_promo_rules' => false,
+        'note'  => 'If not set, product default image will be used'
+    )
+);
 
 $this->endSetup();

@@ -22,27 +22,31 @@ $productEntityType->loadByCode(Mage_Catalog_Model_Product::ENTITY);
 $attributeSets = Mage::getResourceModel('eav/entity_attribute_set_collection');
 $attributeSets->setEntityTypeFilter($productEntityType->getId());
 
-foreach($attributeSets as $attributeSet) {
+foreach ($attributeSets as $attributeSet) {
     /** @var $attributeSet Mage_Eav_Model_Entity_Attribute_Set */
     $this->addAttributeGroup(Mage_Catalog_Model_Product::ENTITY, $attributeSet->getId(), 'Twitter Cards', 3);
 }
 
 //Creation of twitter title attribute
-$this->addAttribute($productEntityType->getId(), 'twitter_title', array(
-    'group' => 'Twitter Cards',
-    'sort_order' => 10,
-    'type' => 'varchar',
-    'label' => 'Twitter Title',
-    'input' => 'text',
-    'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-    'visible' => true,
-    'required' => false,
-    'user_defined' => true,
-    'visible_on_front' => true,
-    'unique' => false,
-    'is_configurable' => false,
-    'used_for_promo_rules' => false,
-    'note'  => 'If not set, product meta title or name will be used'
-));
+$this->addAttribute(
+    $productEntityType->getId(),
+    'twitter_title',
+    array(
+        'group' => 'Twitter Cards',
+        'sort_order' => 10,
+        'type' => 'varchar',
+        'label' => 'Twitter Title',
+        'input' => 'text',
+        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'visible' => true,
+        'required' => false,
+        'user_defined' => true,
+        'visible_on_front' => true,
+        'unique' => false,
+        'is_configurable' => false,
+        'used_for_promo_rules' => false,
+        'note'  => 'If not set, product meta title or name will be used'
+    )
+);
 
 $this->endSetup();

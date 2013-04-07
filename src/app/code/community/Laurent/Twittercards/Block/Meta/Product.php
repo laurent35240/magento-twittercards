@@ -86,7 +86,7 @@ class Laurent_Twittercards_Block_Meta_Product extends Laurent_Twittercards_Block
     public function getProductImageAttributeCodeToUse(Mage_Catalog_Model_Product $product)
     {
         $imageAttributeCode = 'image';
-        if($product->getData('twitter_image') != '') {
+        if ($product->getData('twitter_image') != '') {
             $imageAttributeCode = 'twitter_image';
         }
 

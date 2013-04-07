@@ -10,7 +10,8 @@
  * @copyright  Copyright (c) 2012 Jean Jean Inc. (http://laurent-clouet.fr/)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0) 
  */ 
-class Laurent_Twittercards_Model_Product_Attribute_Backend_Image extends Mage_Eav_Model_Entity_Attribute_Backend_Abstract
+class Laurent_Twittercards_Model_Product_Attribute_Backend_Image
+    extends Mage_Eav_Model_Entity_Attribute_Backend_Abstract
 {
     /**
      * Save uploaded file and set its name to product

@@ -18,52 +18,64 @@ $this->startSetup();
 $this->addAttributeGroup(Mage_Catalog_Model_Category::ENTITY, 'Default', 'Twitter Cards', 40);
 
 //Creation of twitter title attribute
-$this->addAttribute(Mage_Catalog_Model_Category::ENTITY, 'twitter_title', array(
-    'group' => 'Twitter Cards',
-    'sort_order' => 10,
-    'type' => 'varchar',
-    'label' => 'Twitter Title',
-    'input' => 'text',
-    'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-    'visible' => true,
-    'required' => false,
-    'user_defined' => true,
-    'visible_on_front' => true,
-    'unique' => false,
-    'note'  => 'If not set, category meta title or name will be used'
-));
+$this->addAttribute(
+    Mage_Catalog_Model_Category::ENTITY,
+    'twitter_title',
+    array(
+        'group' => 'Twitter Cards',
+        'sort_order' => 10,
+        'type' => 'varchar',
+        'label' => 'Twitter Title',
+        'input' => 'text',
+        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'visible' => true,
+        'required' => false,
+        'user_defined' => true,
+        'visible_on_front' => true,
+        'unique' => false,
+        'note'  => 'If not set, category meta title or name will be used'
+    )
+);
 
 //Creation of twitter description attribute
-$this->addAttribute(Mage_Catalog_Model_Category::ENTITY, 'twitter_description', array(
-    'group' => 'Twitter Cards',
-    'sort_order' => 20,
-    'type' => 'text',
-    'label' => 'Twitter Description',
-    'input' => 'textarea',
-    'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-    'visible' => true,
-    'required' => false,
-    'user_defined' => true,
-    'visible_on_front' => true,
-    'unique' => false,
-    'note'  => 'If not set, category meta description or description will be used'
-));
+$this->addAttribute(
+    Mage_Catalog_Model_Category::ENTITY,
+    'twitter_description',
+    array(
+        'group' => 'Twitter Cards',
+        'sort_order' => 20,
+        'type' => 'text',
+        'label' => 'Twitter Description',
+        'input' => 'textarea',
+        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'visible' => true,
+        'required' => false,
+        'user_defined' => true,
+        'visible_on_front' => true,
+        'unique' => false,
+        'note'  => 'If not set, category meta description or description will be used'
+    )
+);
 
 //Creation of twitter image attribute
-$this->addAttribute(Mage_Catalog_Model_Category::ENTITY, 'twitter_image', array(
-    'group' => 'Twitter Cards',
-    'sort_order' => 20,
-    'type' => 'varchar',
-    'label' => 'Twitter Image',
-    'input' => 'image',
-    'backend' => 'catalog/category_attribute_backend_image',
-    'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-    'visible' => true,
-    'required' => false,
-    'user_defined' => true,
-    'visible_on_front' => true,
-    'unique' => false,
-    'note'  => 'If not set, category thumbnail image will be used'
-));
+$this->addAttribute(
+    Mage_Catalog_Model_Category::ENTITY,
+    'twitter_image',
+    array(
+        'group' => 'Twitter Cards',
+        'sort_order' => 20,
+        'type' => 'varchar',
+        'label' => 'Twitter Image',
+        'input' => 'image',
+        'backend' => 'catalog/category_attribute_backend_image',
+        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'visible' => true,
+        'required' => false,
+        'user_defined' => true,
+        'visible_on_front' => true,
+        'unique' => false,
+        'note'  => 'If not set, category thumbnail image will be used'
+    )
+);
 
 $this->endSetup();
