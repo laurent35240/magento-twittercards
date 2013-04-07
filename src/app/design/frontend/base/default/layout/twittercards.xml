@@ -12,14 +12,19 @@
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0) 
  */-->
 <layout version="0.1.0">
-    <catalog_product_view>
-        <reference name="head">
-            <block type="twittercards/meta_product" name="twittercards_meta" template="twittercards/meta.phtml" />
-        </reference>
-    </catalog_product_view>
     <catalog_category_view>
         <reference name="head">
             <block type="twittercards/meta_category" name="twittercards_meta" template="twittercards/meta.phtml" />
         </reference>
     </catalog_category_view>
+    <catalog_product_view>
+        <reference name="head">
+            <block type="twittercards/meta_product" name="twittercards_meta" template="twittercards/meta.phtml" />
+        </reference>
+    </catalog_product_view>
+    <cms_page_view>
+        <reference name="head">
+            <block type="twittercards/meta_page" name="twittercards_meta" template="twittercards/meta.phtml" />
+        </reference>
+    </cms_page_view>
 </layout>
