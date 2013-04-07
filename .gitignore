@@ -13,7 +13,6 @@ src/app/code/community/EcomDev/
 src/app/code/community/Mgt/
 src/app/code/community/Phoenix/
 src/app/code/core/
-src/app/design/adminhtml/
 src/app/design/frontend/base/default/etc/
 src/app/design/frontend/base/default/layout/authorizenet.xml
 src/app/design/frontend/base/default/layout/bundle.xml

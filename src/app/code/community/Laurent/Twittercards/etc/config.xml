@@ -23,6 +23,11 @@
                 <class>Laurent_Twittercards_Block</class>
             </twittercards>
         </blocks>
+        <helpers>
+            <twittercards>
+                <class>Laurent_Twittercards_Helper</class>
+            </twittercards>
+        </helpers>
         <models>
             <twittercards>
                 <class>Laurent_Twittercards_Model</class>
@@ -41,6 +46,13 @@
         </resources>
     </global>
     <adminhtml>
+        <layout>
+            <updates>
+                <laurent_twittercards>
+                    <file>twittercards.xml</file>
+                </laurent_twittercards>
+            </updates>
+        </layout>
         <translate>
             <modules>
                 <laurent_twittercards>

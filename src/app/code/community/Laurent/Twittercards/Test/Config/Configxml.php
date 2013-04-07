@@ -26,4 +26,9 @@ class Laurent_Twittercards_Test_Config_Configxml extends EcomDev_PHPUnit_Test_Ca
         );
     }
 
+    public function testHelperAlias()
+    {
+        $this->assertHelperAlias('twittercards', 'Laurent_Twittercards_Helper_Data');
+    }
+
 }

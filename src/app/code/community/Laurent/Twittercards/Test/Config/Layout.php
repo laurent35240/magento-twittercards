@@ -18,9 +18,19 @@ class Laurent_Twittercards_Test_Config_Layout extends EcomDev_PHPUnit_Test_Case_
         $this->assertLayoutFileDefined('frontend', 'twittercards.xml');
     }
 
+    public function testLayoutAdminhtmlIsDefined()
+    {
+        $this->assertLayoutFileDefined('adminhtml', 'twittercards.xml');
+    }
+
     public function testLayoutFileExists()
     {
         $this->assertLayoutFileExists('frontend', 'twittercards.xml');
+    }
+
+    public function testLayoutAdminhtmlFileExists()
+    {
+        $this->assertLayoutFileExists('adminhtml', 'twittercards.xml');
     }
 
 }
