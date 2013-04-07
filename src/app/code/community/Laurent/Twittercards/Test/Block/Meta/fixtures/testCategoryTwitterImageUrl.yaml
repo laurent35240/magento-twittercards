@@ -1,0 +1,4 @@
+eav:
+  catalog_category:
+    - entity_id: 1
+      image: main_image.jpg

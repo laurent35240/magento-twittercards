@@ -1,0 +1,5 @@
+eav:
+  catalog_category:
+    - entity_id: 1
+      image: main_image.jpg
+      twitter_image: twitter_image.jpg
