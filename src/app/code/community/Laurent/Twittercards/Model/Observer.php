@@ -50,7 +50,7 @@ class Laurent_Twittercards_Model_Observer
 
             }catch(Exception $e) {
                 Mage::logException($e);
-                $errorMessage = Mage::helper('twittercards')->__('Error while uploading twitter image');
+                $errorMessage = Mage::helper('twittercards')->__('Error while uploading twitter image: %s', $e->getMessage());
                 Mage::getSingleton('adminhtml/session')->addError($errorMessage);
             }
         }
