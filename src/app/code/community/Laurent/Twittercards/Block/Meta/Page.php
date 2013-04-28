@@ -32,7 +32,18 @@ class Laurent_Twittercards_Block_Meta_Page extends Laurent_Twittercards_Block_Me
      */
     public function getTitle()
     {
-        // TODO: Implement getTitle() method.
+        return $this->getMethodValueIfPage('getPageTwitterTitle');
+    }
+
+    /**
+     * @param Mage_Cms_Model_Page $cmsPage
+     * @return string
+     */
+    public function getPageTwitterTitle(Mage_Cms_Model_Page $cmsPage)
+    {
+        $attributeCodes = array('twitter_title', 'title');
+        $rawTwitterTitle = $this->getEntityDataWithFallback($cmsPage, $attributeCodes);
+        return $this->escapeHtml($rawTwitterTitle);
     }
 
     /**
@@ -40,7 +51,18 @@ class Laurent_Twittercards_Block_Meta_Page extends Laurent_Twittercards_Block_Me
      */
     public function getDescription()
     {
-        // TODO: Implement getDescription() method.
+        return $this->getMethodValueIfPage('getPageTwitterDescription');
+    }
+
+    /**
+     * @param Mage_Cms_Model_Page $cmsPage
+     * @return string
+     */
+    public function getPageTwitterDescription(Mage_Cms_Model_Page $cmsPage)
+    {
+        $attributeCodes = array('twitter_description', 'meta_description', 'description');
+        $rawDescription = $this->getEntityDataWithFallback($cmsPage, $attributeCodes);
+        return $this->cleanDescriptionForTwitter($rawDescription);
     }
 
     /**
@@ -48,7 +70,20 @@ class Laurent_Twittercards_Block_Meta_Page extends Laurent_Twittercards_Block_Me
      */
     public function getImageUrl()
     {
-        // TODO: Implement getImageUrl() method.
+        return $this->getMethodValueIfPage('getPageTwitterImageUrl');
+    }
+
+    /**
+     * @param Mage_Cms_Model_Page $cmsPage
+     * @return string
+     */
+    public function getPageTwitterImageUrl(Mage_Cms_Model_Page $cmsPage)
+    {
+        $twitterImageUrl = '';
+        if($cmsPage->getData('twitter_image') != '') {
+            $twitterImageUrl = Mage::getBaseUrl('media') . $cmsPage->getData('twitter_image');
+        }
+        return $twitterImageUrl;
     }
 
     /**

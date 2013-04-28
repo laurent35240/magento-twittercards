@@ -45,7 +45,7 @@ class Laurent_Twittercards_Model_Observer
                 $path = Mage::getBaseDir('media') . DS . 'cms' . DS . 'page';
 
                 $uploader->save($path, $_FILES['twitter_image']['name']);
-                $newTwitterImageValue = 'cms' . DS . 'page' . DS . $uploader->getUploadedFileName();
+                $newTwitterImageValue = 'cms' . DS . 'page' . $uploader->getUploadedFileName();
                 $page->setData('twitter_image', $newTwitterImageValue);
 
             }catch(Exception $e) {
