@@ -34,25 +34,32 @@ class Laurent_Twittercards_Block_Adminhtml_Cms_Page_Edit_Tab_Twittercards
         $model = Mage::registry('cms_page');
 
         $fieldset = $form->addFieldset(
-            'twittercards_fieldset',
+            'twitter_fieldset',
             array('legend' => $helper->__('Twitter cards'), 'class' => 'fieldset-wide')
         );
 
-        $fieldset->addField('twittercards_title', 'text', array(
-            'name' => 'twittercards_title',
+        $fieldset->addField('twitter_title', 'text', array(
+            'name' => 'twitter_title',
             'label' => $helper->__('Title'),
             'title' => $helper->__('Title'),
             'disabled'  => $isElementDisabled
         ));
 
-        $fieldset->addField('twittercards_description', 'textarea', array(
-            'name' => 'twittercards_description',
+        $fieldset->addField('twitter_description', 'textarea', array(
+            'name' => 'twitter_description',
             'label' => $helper->__('Description'),
             'title' => $helper->__('Description'),
             'disabled'  => $isElementDisabled
         ));
 
-        Mage::dispatchEvent('adminhtml_cms_page_edit_tab_twittercards_prepare_form', array('form' => $form));
+        $fieldset->addField('twitter_image', 'image', array(
+            'name' => 'twitter_image',
+            'label' => $helper->__('Image'),
+            'title' => $helper->__('Image'),
+            'disabled'  => $isElementDisabled
+        ));
+
+        Mage::dispatchEvent('adminhtml_cms_page_edit_tab_twitter_prepare_form', array('form' => $form));
 
         $form->setValues($model->getData());
 

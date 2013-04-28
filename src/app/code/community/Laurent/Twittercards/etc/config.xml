@@ -19,6 +19,11 @@
     </modules>
     <global>
         <blocks>
+            <adminhtml>
+                <rewrite>
+                    <cms_page_edit_form>Laurent_Twittercards_Block_Adminhtml_Cms_Page_Edit_Form</cms_page_edit_form>
+                </rewrite>
+            </adminhtml>
             <twittercards>
                 <class>Laurent_Twittercards_Block</class>
             </twittercards>
@@ -46,6 +51,17 @@
         </resources>
     </global>
     <adminhtml>
+        <events>
+            <cms_page_prepare_save>
+                <observers>
+                    <upload_twitter_image>
+                        <type>singleton</type>
+                        <class>Laurent_Twittercards_Model_Observer</class>
+                        <method>uploadTwitterImage</method>
+                    </upload_twitter_image>
+                </observers>
+            </cms_page_prepare_save>
+        </events>
         <layout>
             <updates>
                 <laurent_twittercards>
