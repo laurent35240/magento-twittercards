@@ -30,24 +30,6 @@ class Laurent_Twittercards_Block_Meta_Page extends Laurent_Twittercards_Block_Me
     /**
      * @return string
      */
-    public function getCanonicalUrl()
-    {
-        return $this->getMethodValueIfPage('getPageTwitterUrl');
-    }
-
-    /**
-     * @param Mage_Cms_Model_Page $cmsPage
-     * @return string
-     */
-    public function getPageTwitterUrl(Mage_Cms_Model_Page $cmsPage)
-    {
-        $pageHelper = Mage::helper('cms/page');
-        return $pageHelper->getPageUrl($cmsPage->getId());
-    }
-
-    /**
-     * @return string
-     */
     public function getTitle()
     {
         return $this->getMethodValueIfPage('getPageTwitterTitle');

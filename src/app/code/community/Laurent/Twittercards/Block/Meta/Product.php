@@ -32,23 +32,6 @@ class Laurent_Twittercards_Block_Meta_Product extends Laurent_Twittercards_Block
     /**
      * @return string
      */
-    public function getCanonicalUrl()
-    {
-        return $this->getMethodValueIfProduct('getProductTwitterUrl');
-    }
-
-    /**
-     * @param Mage_Catalog_Model_Product $product
-     * @return string
-     */
-    public function getProductTwitterUrl(Mage_Catalog_Model_Product $product)
-    {
-        return $product->getProductUrl();
-    }
-
-    /**
-     * @return string
-     */
     public function getTitle()
     {
         return $this->getMethodValueIfProduct('getCatalogObjectTwitterTitle');

@@ -32,23 +32,6 @@ class Laurent_Twittercards_Block_Meta_Category extends Laurent_Twittercards_Bloc
     /**
      * @return string
      */
-    public function getCanonicalUrl()
-    {
-        return $this->getMethodValueIfCategory('getCategoryTwitterUrl');
-    }
-
-    /**
-     * @param Mage_Catalog_Model_Category $category
-     * @return string
-     */
-    public function getCategoryTwitterUrl(Mage_Catalog_Model_Category $category)
-    {
-        return $category->getUrl();
-    }
-
-    /**
-     * @return string
-     */
     public function getTitle()
     {
         return $this->getMethodValueIfCategory('getCatalogObjectTwitterTitle');

@@ -16,7 +16,12 @@ abstract class Laurent_Twittercards_Block_Meta_Abstract extends Mage_Core_Block_
     /**
      * @return string
      */
-    abstract public function getCanonicalUrl();
+    public function getCurrentUrl()
+    {
+        /** @var Mage_Core_Helper_Url $urlHelper */
+        $urlHelper = Mage::helper('core/url');
+        return $urlHelper->getCurrentUrl();
+    }
 
     /**
      * @return string
