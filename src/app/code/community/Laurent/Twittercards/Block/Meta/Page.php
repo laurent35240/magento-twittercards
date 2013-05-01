@@ -14,6 +14,20 @@ class Laurent_Twittercards_Block_Meta_Page extends Laurent_Twittercards_Block_Me
 {
 
     /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        $cacheKeyInfo = parent::getCacheKeyInfo();
+        $currentPage = Mage::getSingleton('cms/page');
+        $cacheKeyInfo[] = $currentPage->getId();
+
+        return $cacheKeyInfo;
+    }
+
+    /**
      * @return string
      */
     public function getCanonicalUrl()
@@ -21,6 +35,10 @@ class Laurent_Twittercards_Block_Meta_Page extends Laurent_Twittercards_Block_Me
         return $this->getMethodValueIfPage('getPageTwitterUrl');
     }
 
+    /**
+     * @param Mage_Cms_Model_Page $cmsPage
+     * @return string
+     */
     public function getPageTwitterUrl(Mage_Cms_Model_Page $cmsPage)
     {
         $pageHelper = Mage::helper('cms/page');
@@ -93,11 +111,7 @@ class Laurent_Twittercards_Block_Meta_Page extends Laurent_Twittercards_Block_Me
      */
     protected function getMethodValueIfPage($methodName)
     {
-        $value = null;
         $currentCmsPage = Mage::getSingleton('cms/page');
-        if ($currentCmsPage instanceof Mage_Cms_Model_Page) {
-            $value = call_user_func(array($this, $methodName), $currentCmsPage);
-        }
-        return $value;
+        return call_user_func(array($this, $methodName), $currentCmsPage);
     }
 }

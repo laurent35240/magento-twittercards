@@ -34,6 +34,15 @@ abstract class Laurent_Twittercards_Block_Meta_Abstract extends Mage_Core_Block_
     abstract public function getImageUrl();
 
     /**
+     * Lifetime of cache is defined to one day
+     * @return int
+     */
+    public function getCacheLifetime()
+    {
+        return 86400;
+    }
+
+    /**
      * @return string
      */
     public function getSiteTwitterName()
@@ -98,6 +107,14 @@ abstract class Laurent_Twittercards_Block_Meta_Abstract extends Mage_Core_Block_
     }
 
 
+    /**
+     * Get value from a method of this class with registry object as first parameter
+     *
+     * @param string $methodName
+     * @param string $registryKey
+     * @param string $expectedClassName
+     * @return mixed
+     */
     protected function getMethodValueIfCorrectRegistry($methodName, $registryKey, $expectedClassName)
     {
         $value = null;

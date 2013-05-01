@@ -14,6 +14,22 @@ class Laurent_Twittercards_Block_Meta_Product extends Laurent_Twittercards_Block
 {
 
     /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        $cacheKeyInfo = parent::getCacheKeyInfo();
+        $currentProduct = Mage::registry('current_product');
+        if($currentProduct instanceof Mage_Catalog_Model_Product) {
+            $cacheKeyInfo[] = $currentProduct->getId();
+        }
+
+        return $cacheKeyInfo;
+    }
+
+    /**
      * @return string
      */
     public function getCanonicalUrl()

@@ -14,6 +14,22 @@ class Laurent_Twittercards_Block_Meta_Category extends Laurent_Twittercards_Bloc
 {
 
     /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        $cacheKeyInfo = parent::getCacheKeyInfo();
+        $currentCategory = Mage::registry('current_category');
+        if($currentCategory instanceof Mage_Catalog_Model_Category) {
+            $cacheKeyInfo[] = $currentCategory->getId();
+        }
+
+        return $cacheKeyInfo;
+    }
+
+    /**
      * @return string
      */
     public function getCanonicalUrl()

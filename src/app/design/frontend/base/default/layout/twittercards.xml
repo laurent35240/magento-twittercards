@@ -22,9 +22,9 @@
             <block type="twittercards/meta_product" name="twittercards_meta" template="twittercards/meta.phtml" />
         </reference>
     </catalog_product_view>
-    <cms_page_view>
+    <cms_page>
         <reference name="head">
             <block type="twittercards/meta_page" name="twittercards_meta" template="twittercards/meta.phtml" />
         </reference>
-    </cms_page_view>
+    </cms_page>
 </layout>
