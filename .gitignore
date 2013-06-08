@@ -1,6 +1,7 @@
 .idea
 src/.htaccess
 src/.htaccess.sample
+src/.modman
 src/LICENSE.html
 src/LICENSE.txt
 src/LICENSE_AFL.txt
