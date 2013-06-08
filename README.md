@@ -37,6 +37,10 @@ If you find a bug, [you can create a ticket][3].
 Magento Twitter Cards extension is licensed under Open Software License (OSL 3.0)
 
 ## Changeset
+### 1.0.0
+ * Stable release
+ * Fix for saving CMS pages
+
 ### 0.1.3
 First beta version of this extension
 
