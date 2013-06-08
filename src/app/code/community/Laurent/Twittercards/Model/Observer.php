@@ -25,13 +25,19 @@ class Laurent_Twittercards_Model_Observer
         /** @var Mage_Cms_Model_Page $page */
         $page = $observer->getEvent()->getData('page');
         $twitterImageValue = $page->getData('twitter_image');
+        $newTwitterImageValue = '';
+
+        //Previous image value
+        if(is_array($twitterImageValue) && $twitterImageValue['value']) {
+            $newTwitterImageValue = $twitterImageValue['value'];
+        }
 
         //Delete old image
         if(isset($twitterImageValue['delete']) && $twitterImageValue['delete']=='1'){
-            if(!empty($twitterImageValue['value'])){
+            if(!empty($newTwitterImageValue)){
                 $path = Mage::getBaseDir('media') . DS;
-                @unlink($path . $twitterImageValue['value']);
-                $page->setData('twitter_image', '');
+                @unlink($path . $newTwitterImageValue);
+                $newTwitterImageValue = '';
             }
         }
 
@@ -46,7 +52,6 @@ class Laurent_Twittercards_Model_Observer
 
                 $uploader->save($path, $_FILES['twitter_image']['name']);
                 $newTwitterImageValue = 'cms' . DS . 'page' . $uploader->getUploadedFileName();
-                $page->setData('twitter_image', $newTwitterImageValue);
 
             }catch(Exception $e) {
                 Mage::logException($e);
@@ -54,5 +59,7 @@ class Laurent_Twittercards_Model_Observer
                 Mage::getSingleton('adminhtml/session')->addError($errorMessage);
             }
         }
+
+        $page->setData('twitter_image', $newTwitterImageValue);
     }
 }
