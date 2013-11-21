@@ -194,4 +194,8 @@ src/app/design/adminhtml/default/default/layout/widget.xml
 src/app/design/adminhtml/default/default/layout/xmlconnect.xml
 src/app/design/adminhtml/default/default/locale/
 src/app/design/adminhtml/default/default/template/
+src/1.7.0.2-1.8.0.0.diff
+src/app/code/community/Cm/
+src/app/design/adminhtml/default/default/layout/tax.xml
+src/app/etc/modules/Cm_RedisSession.xml
 
