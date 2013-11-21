@@ -16,8 +16,8 @@ Magento extension for using Twitter Cards meta tags on product, category and CMS
 ## Compatibiity
 This extension is compatible with:
 
- * Magento CE 1.7
- * Magento EE 1.12
+ * Magento CE 1.7 and 1.8
+ * Magento EE 1.12 and 1.13
 
 ## Locales
 Extension available in:
@@ -37,6 +37,9 @@ If you find a bug, [you can create a ticket][3].
 Magento Twitter Cards extension is licensed under Open Software License (OSL 3.0)
 
 ## Changeset
+### 1.0.1
+Support of Magento 1.8
+
 ### 1.0.0
  * Stable release
  * Fix for saving CMS pages

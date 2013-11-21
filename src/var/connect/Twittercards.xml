@@ -1,5 +1,5 @@
 <_>
-   <form_key>VdGpG0AjzxAB2UHL</form_key>
+   <form_key>kqSWpxFkyU61fIhd</form_key>
    <name>Twittercards</name>
    <channel>community</channel>
    <version_ids>
@@ -10,9 +10,9 @@
 You can define value of all of these tags in your back office.</description>
    <license>Open Software License (OSL 3.0)</license>
    <license_uri>http://opensource.org/licenses/osl-3.0.php</license_uri>
-   <version>1.0.0</version>
+   <version>1.0.1</version>
    <stability>stable</stability>
-   <notes>Stable release</notes>
+   <notes>Support of Magento 1.8</notes>
    <authors>
       <name>
          <name>Laurent Clouet</name>
@@ -41,7 +41,7 @@ You can define value of all of these tags in your back office.</description>
             <max/>
          </max>
          <files>
-            <files>   </files>
+            <files>    </files>
          </files>
       </package>
       <extension>
